@@ -8,12 +8,14 @@ def add_data():
     phone_number = input('Введите номер телефона: ')
     with open('phonebook.txt', 'a', encoding='utf-8') as f:
         f.write(f'\n{fio} | {phone_number}')
+    print()
     print('Новый контакт записан!')
 
 def find_data():
     data = input('Введите данные для поиска: ')
     with open('phonebook.txt', 'r', encoding='utf-8') as f:
         phone_book = f.read()
+    print()    
     print('Результаты поиска: ')
     print(search(phone_book, data))
 
@@ -30,6 +32,7 @@ def edit_data():
     phone_book = '\n'.join(phone_book)
     with open('phonebook.txt', 'w', encoding='utf-8') as f:
         f.write(phone_book)
+    print()
     print(phone_book)
 
 def edited(text: str):
@@ -50,4 +53,5 @@ def del_data():
     phone_book = '\n'.join(phone_book)
     with open('phonebook.txt', 'w', encoding='utf-8') as f:
         f.write(phone_book)
+    print()
     print(phone_book)
